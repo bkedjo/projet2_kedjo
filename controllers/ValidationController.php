@@ -4,6 +4,9 @@ class ValidationController
 {
  
 public function signup(array $userData)
+
+
+
     {// Validation du nom d'utilisateur
         $isValidUsername = strlen($userData['username']) >= 3;
         $msgUsername = $isValidUsername ? '' : 'Le nom d\'utilisateur doit contenir au moins 3 caractères';
@@ -26,5 +29,8 @@ public function signup(array $userData)
         ];
     }
 
+    
+
 }
+
 

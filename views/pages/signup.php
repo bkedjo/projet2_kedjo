@@ -1,6 +1,6 @@
 <?php
-require_once('./client/includes/header.php');
-require_once('./client/includes/nave.php');
+ require_once('./client/includes/header.php');
+ require_once('./client/includes/nave.php');
 
 
 ?>
@@ -31,13 +31,20 @@ require_once('./client/includes/nave.php');
                 <div class="mb-1">
                         <label for="exampleInputEmail1" class="form-label">Email</label>
                         <input type="email" name="email" class="form-control" id="exampleInputEmail1">
-                    </div>
+                        <?php if (isset($errorMessages['email'])): ?>
+                            <div class="text-danger"><?php echo $errorMessages['email']; ?></div>
+                            <?php endif; ?>
+                </div>
 
                    
                     <div class="mb-1">
                         <label for="username" class="form-label">User Name</label>
                         <input type="text" name="username" class="form-control" id="username">
-                    </div>
+                        <?php if (isset($errorMessages['username'])): ?>
+                        <div class="text-danger"><?php echo $errorMessages['username']; ?></div>
+                        <?php endif; ?>
+                     </div>
+
                     <div class="mb-1">
                         <label for="fname" class="form-label">Full Name</label>
                         <input type="text" name="fname" class="form-control" id="fname">
@@ -51,6 +58,10 @@ require_once('./client/includes/nave.php');
                    <div class="mb-1">
                         <label for="pwd" class="form-label">Password</label>
                         <input type="password" name="pwd" class="form-control" id="pwd">
+                        <?php if (isset($errorMessages['password'])): ?>
+                     <div class="text-danger"><?php echo $errorMessages['password']; ?></div>
+                     <?php endif; ?>
+                    
                     </div>
 
                 </div>

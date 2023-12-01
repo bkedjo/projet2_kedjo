@@ -23,16 +23,46 @@ class PageController
         require('./views/pages/products.php');
     }
 
+    public function product($productId)
+    {
+
+
+        $objProductController = new ProductController;
+        $product = $objProductController->getProductById($productId);
+
+        global $pageData;
+        $pageData =
+            ['product' => $product];
+        require('./views/pages/product.php');
+
+
+
+
+
+        //       if(isset($_POST['addCart'])){
+        //        $quantite = $_POST['qtty'];
+        //        if($quantite > 0){
+        //             addCart($id,$qtty);
+        //         }
+
+
+
+        // }
+
+
+    }
+
+
+
+
+
     public function cart()
     {
         echo '<h1>Page cart</h1>';
     }
 
 
-    public function acceuil()
-    {
-        // require_once './views/pages/acceuil.php';
-    }
+
 
 
     public function users()
@@ -60,79 +90,22 @@ class PageController
     public function user()
     {
 
-        //Va me chercher mes users 
-        $objUserController = new UserController;
-        $userDel = $objUserController->DeleteUserById();
-        global $pageData;
-        $pageData = ['user' =>  $userDel];
+        if (isset($_GET['id'])) {
+            // $productId = $_GET['id'];
+            // $objProductController = new ProductController;
+            // $product = $objProductController->getProductById($productId); 
+
+
+
+            //Va me chercher mes users 
+            $objUserController = new UserController;
+            $userDel = $objUserController->DeleteUserById();
+            global $pageData;
+            $pageData = ['user' =>  $userDel];
+        }
+        require_once './views/admin/users.php';
     }
 
-
-    // public function signup()
-    // {
-
-
-    //     if (isset($_POST['envoyer'])) {
-    //         // recuperation des elements de mon formulaire
-    //         //valider les donnees recues
-    //          $fieldVrevalid=$isValid;
-    //          $userValidationData= $validationController::signup();
-    //         $fieldVrevalid= $userValidationData['isvalid'];
-            
-
-        
-
-    //         $email = $_POST['email'];
-    //          $username = $_POST['username'];
-    //         $fname = $_POST['fname'];
-    //         $lname = $_POST['lname'];
-    //         $pwd = $_POST['pwd'];
-
-
-
-
-    //          if (empty($email) ||empty( $username) ||empty($fname)|| empty($lname)||empty( $pwd)) { 
-              
-    //          echo 'Remplir tous les champs';
-             
-    //         require_once './views/pages/signup.php';
-
-    //            }
-    //            else{
-    //                if ($fieldVrevalid) {
-
-    //                  //si la validation fonctionne
-    //         $objUserController = new UserController;
-    //         $userParams =
-    //             [
-    //                 'email' => $email,
-    //             'username' => $username,
-    //                 'fname' => $fname,
-    //                 'lname' => $lname,
-    //                 'pwd' => $pwd,
-    //             ];
-
-    //         $objUserController->ajouterUser($userParams);
-
-
-
-
-    //         require_once './views/pages/login.php';
-    //     } else {
-
-
-    //         require_once './views/pages/signup.php';
-    //     }
-
-
-
-    //                 }
-                
-    //             }
-
-
-           
-    // }
 
 
 
@@ -182,7 +155,7 @@ class PageController
 
 
 
-        
+
 
     public function login()
     {

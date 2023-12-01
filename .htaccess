@@ -1,6 +1,10 @@
 RewriteEngine On
-
-RewriteRule ^.*php$ index.php [L]
+RewriteBase /ecom-2/projet2_Layssar/
 
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule . index.php [L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]
+
+
+
+

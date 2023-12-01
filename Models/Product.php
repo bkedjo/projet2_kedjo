@@ -51,14 +51,15 @@ class Product extends Crud  {
             ]; */
 
            // var_dump($productdata);
-            echo'</br></br>';
-            $request = "UPDATE product SET name = :name, qtty = :qtty, price = :price, url_img = :url_img, description = :description  WHERE id = :id";
+            // echo'</br></br>';
+            // $request = "UPDATE product SET name = :name, qtty = :qtty, price = :price, url_img = :url_img, description = :description  WHERE id = :id";
             //parent::updateById($request, $productdata);
         }
     
         public function deleteProduct($id)
         {
             return parent::delete('product',$id);
+            
         }
     }
     

@@ -94,11 +94,11 @@
 <nav class="ecommerce-navbar navbar-expand navbar-light bg-white justify-content-between">
 <div class="container-small d-flex flex-between-center" data-navbar="data-navbar">
   <ul class="navbar-nav justify-content-end align-items-center">
-    <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link ps-0 active" href="index.php">Home</a></li>
-    <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link pe-0" href="mescommandes.php">Mes commandes</a></li>
+    <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link ps-0 active" href="acceuil.php">Home</a></li>
+    <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link pe-0" href=".php">Mes commandes</a></li>
 <?php if( isset( $_SESSION['panier']))
 
-   {?> <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link pe-0" href="panier.php">Checkout</a></li>
+   {?> <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link pe-0" href="cart.php">Checkout</a></li>
   <?php }
   ?>
     <li class="nav-item" data-nav-item="data-nav-item"><a class="nav-link pe-0" href="logout.php">Quitter</a></li>

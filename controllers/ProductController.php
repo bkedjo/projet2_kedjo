@@ -11,7 +11,13 @@ class ProductController
         return $objProduct->getProducts();
     }
 
-    #get product by category
-    #
+    #get product by Id
+    
+    public function getProductById($id)
+    {
+        $objProduct = new Product;
+    return $objProduct->getProductById($id);
+    }
 
+    
 }

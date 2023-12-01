@@ -1,17 +1,18 @@
 <?php
 require_once('./client/includes/header.php');
-//require_once('./client/includes/nav.php');
+require_once('./client/includes/nave.php');
 
 
 
-//require_once("./includes/header1.php");
-//require_once ("./includes/nav.php");
+
+
 
 global $pageData;
 //var_dump($pageData);
 
 
 ?>
+
 
 <div class="ecommerce-homepage pt-5 mb-9">
 
@@ -46,7 +47,9 @@ global $pageData;
                     <div class="position-relative text-decoration-none product-card h-100">
                       <div class="d-flex flex-column justify-content-between h-100">
                         <div>
-                          <a href="voitureDetail.php?id=<?php echo $product['id']; ?>">
+                          <a href="product/<?php echo $product['id']; ?>">
+
+
                             <div class="border border-1 rounded-3 position-relative mb-3">
                               <img class="img-fluid" src="images/<?php echo $product['url_img']; ?>" alt="image introuvable" />
                             </div>
@@ -60,7 +63,7 @@ global $pageData;
 
                         <!-- afficher prix -->
                         <div>
-                        <h6 class="text-1100"><?php echo $product['name']; ?></h6>
+                          <h6 class="text-1100"><?php echo $product['name']; ?></h6>
                           <h3 class="text-1100"><?php echo $product['price']; ?>CAD</h3>
 
                         </div>
@@ -84,6 +87,13 @@ global $pageData;
   </section>
 
 </div>
+
+<?php if (isset($errorMessage)) : ?>
+  <div class="alert alert-danger" role="alert">
+    <?php echo $errorMessage; ?>
+  </div>
+<?php endif; ?>
+
 
 
 <?php
